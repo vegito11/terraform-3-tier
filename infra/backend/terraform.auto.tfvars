@@ -69,7 +69,7 @@ eks_addons = {
   }
   kube-proxy = {
     addon_version     = "v1.27.4-eksbuild.2"
-    resolve_conflicts = "resolve_conflicts_on_update"
+    resolve_conflicts = "OVERWRITE"
   }
   vpc-cni = {
     addon_version = "v1.13.4-eksbuild.1"
