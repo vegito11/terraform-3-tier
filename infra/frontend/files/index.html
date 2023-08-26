@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin-top: 2rem;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Frontend Application</h1>
+  </header>
+
+  <div class="container">
+    <p>This is a sample frontend application that makes requests to a backend API.</p>
+  
+    <button id="fetchButton">Fetch Data from Backend</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const fetchButton = document.getElementById("fetchButton");
+    const resultDiv = document.getElementById("result");
+
+    fetchButton.addEventListener("click", async () => {
+      try {
+        const response = await fetch("/api/backend"); // Change this URL to your backend API endpoint
+        const data = await response.json();
+        resultDiv.innerHTML = `<p>Response from Backend: ${JSON.stringify(data)}</p>`;
+      } catch (error) {
+        resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
