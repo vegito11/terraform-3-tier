@@ -28,15 +28,8 @@ cluster_name                    = "development"
 cluster_endpoint_private_access = true
 cluster_endpoint_public_access  = true
 cluster_endpoint_public_access_cidrs = [
-  "11.0.0.0/16",
-  "12.0.0.0/16",
-  "43.204.165.131/32",  # NAT1 IP
-  "43.205.18.107/32",   # NAT2 IP
-  "43.205.148.126/32",  # OpenVPN IP
-  "106.193.208.186/32", # Airtel
-  "103.186.18.178/32",  # Jio
+  "10.0.0.0/16",
   "103.159.0.0/16",     # Wifi
-  "14.96.113.102/32",   # Shubhu
 ]
 
 ## Eks Vars

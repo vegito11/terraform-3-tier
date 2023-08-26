@@ -35,6 +35,12 @@ The project has the following directory structure:
 
    Confirm by typing `yes` when prompted.
 
+## Connect to the cluster using
+
+```bash
+aws eks update-kubeconfig --region us-east-1 --name development --profile terra
+```
+
 ## Cleaning Up
 
 When you're done using the resources, you can destroy them using Terraform:
