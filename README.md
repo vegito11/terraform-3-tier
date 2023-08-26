@@ -8,23 +8,29 @@ The project has the following directory structure:
 
 ## Usage
 
+> Navigate to the specific directory (e.g., infra/backend or infra/frontend) where you want to deploy infrastructure. 
+
+> Review and modify the terraform.auto.tfvars file with appropriate values.
 
 1. Initialize Terraform:
 
    ```bash
-   terraform init
+   BACKEND_DIR=infra/backend
+   FRONTED_DIR=infra/frontend
+   DIR=$BACKEND_DIR
+   terraform -chdir=${DIR} init
    ```
 
 1. Plan your infrastructure:
 
    ```bash
-   terraform plan
+   terraform -chdir=${DIR} plan
    ```
 
 1. Apply your infrastructure changes:
 
    ```bash
-   terraform apply
+   terraform -chdir=${DIR} apply
    ```
 
    Confirm by typing `yes` when prompted.
@@ -38,7 +44,7 @@ When you're done using the resources, you can destroy them using Terraform:
 2. Run the destroy command:
 
    ```bash
-   terraform destroy
+   terraform destroy -chdir=${DIR}
    ```
 
    Confirm by typing `yes` when prompted.
