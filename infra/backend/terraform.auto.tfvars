@@ -70,12 +70,12 @@ cluster_security_group_additional_rules = {
 ### ----------- 3) EKS Addons -----------------
 
 eks_addons = {
-    
+
   coredns = {
     addon_version = "v1.10.1-eksbuild.2"
   }
   kube-proxy = {
-    addon_version = "v1.27.4-eksbuild.2"
+    addon_version     = "v1.27.4-eksbuild.2"
     resolve_conflicts = "resolve_conflicts_on_update"
   }
   vpc-cni = {
@@ -102,8 +102,8 @@ app_ingress_with_cidr_blocks = [
     cidr_blocks = "10.0.0.0/16"
   },
 ]
-is_multi_az              = false
-deletion_protection      = false
+is_multi_az         = false
+deletion_protection = false
 
 backup_retention_period               = 1
 performance_insights_retention_period = 1

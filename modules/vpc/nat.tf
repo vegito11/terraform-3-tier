@@ -1,4 +1,3 @@
-/* 6.1) Elastic IP for each NAT gateway */
 resource "aws_eip" "nat_eip" {
   for_each = var.nat_enabled ? var.public_subnets : {}
 
@@ -12,9 +11,6 @@ resource "aws_eip" "nat_eip" {
   )
 }
 
-/* 6.2) Create NAT gateway in each public Subnet -
-        It is use to give internet access to private subnet resources
- */
 resource "aws_nat_gateway" "nat" {
   for_each = var.nat_enabled ? var.public_subnets : {}
 
@@ -29,11 +25,6 @@ resource "aws_nat_gateway" "nat" {
     },
   )
 }
-
-
-/* 5.4) To give Internet access to resources in private subnet 
-        Add below route in private route table
-*/
 
 resource "aws_route" "private_nat_gateway" {
 

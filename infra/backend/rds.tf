@@ -11,9 +11,9 @@ module "rds" {
   rds_password          = var.rds_db_password
   deletion_protection   = false
   # publicly_accessible = false
-  is_multi_az          = var.is_multi_az
-  subnet_ids           = module.vpc.private_subnets_id
-  parameter_group_name = var.app_parameter_group_name
+  is_multi_az              = var.is_multi_az
+  subnet_ids               = module.vpc.private_subnets_id
+  parameter_group_name     = var.app_parameter_group_name
   ingress_with_cidr_blocks = var.app_ingress_with_cidr_blocks
   backup_retention_period  = var.backup_retention_period
   skip_final_snapshot      = var.skip_final_snapshot

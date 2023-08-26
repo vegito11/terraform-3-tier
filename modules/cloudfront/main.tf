@@ -24,18 +24,18 @@ resource "aws_s3_bucket_policy" "cdn_bkt_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-          "Sid" = "AllowCloudFrontServicePrincipalReadOnly"
-          "Effect" = "Allow"
-          "Principal" = {
-              "Service" = "cloudfront.amazonaws.com"
-          },
-          "Action" = "s3:GetObject"
-          "Resource" = "arn:aws:s3:::${aws_s3_bucket.bucket[0].id}/*" 
-          "Condition" = {
-              "StringEquals" = {
-                  "AWS:SourceArn" = "${aws_cloudfront_distribution.frontend_distribution.arn}"
-              }
+        "Sid"    = "AllowCloudFrontServicePrincipalReadOnly"
+        "Effect" = "Allow"
+        "Principal" = {
+          "Service" = "cloudfront.amazonaws.com"
+        },
+        "Action"   = "s3:GetObject"
+        "Resource" = "arn:aws:s3:::${aws_s3_bucket.bucket[0].id}/*"
+        "Condition" = {
+          "StringEquals" = {
+            "AWS:SourceArn" = "${aws_cloudfront_distribution.frontend_distribution.arn}"
           }
+        }
       }
     ]
   })

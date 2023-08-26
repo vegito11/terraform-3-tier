@@ -27,7 +27,7 @@ variable "create_origin_access_control" {
 variable "origin_access_control" {
   description = "Map of CloudFront origin access control"
   type = map(object({
-    name      = string
+    name             = string
     description      = string
     origin_type      = string
     signing_behavior = string

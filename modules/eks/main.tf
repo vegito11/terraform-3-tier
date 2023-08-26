@@ -77,8 +77,8 @@ module "eks" {
       },
     )
     iam_role_additional_policies = {
-     ecr_read = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
-     worker_ecr = "arn:aws:iam::${local.account_id}:policy/${aws_iam_policy.workers_default_policy.name}"
+      ecr_read   = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+      worker_ecr = "arn:aws:iam::${local.account_id}:policy/${aws_iam_policy.workers_default_policy.name}"
 
     }
   }

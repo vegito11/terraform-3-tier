@@ -9,6 +9,6 @@ tags = {
   dept        = "core"
 }
 
-bucket_name = "3-tier-frontend.testing.test.com"
-create_s3 = true
+bucket_name  = "3-tier-frontend.testing.test.com"
+create_s3    = true
 s3_origin_id = "demo-frontend"
